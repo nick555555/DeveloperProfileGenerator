@@ -37,14 +37,24 @@ function writeToFile(fileName, data) {
 
 function init() {
   return inquirer.prompt(questions)
-  .then(function(data) {
-    const queryUrl = `https://api.github.com/users/${data.username}`;
+  .then(function(response) {
+    const queryUrl = `https://api.github.com/users/${response.username}`;
 
     axios.get(queryUrl).then(function(res) {
       var userData = {
-        result: res.data,
-        color: data.color
+        githubURL: res.data.html_url,
+        githubImg: res.data.avatar_url,
+        githubRepos: res.data.public_repos,
+        githubFollowers: res.data.followers,
+        githubFollowing: res.data.following,
+        githubLocation: res.data.location,
+        githubBlog: res.data.blog,
+        githubName: res.data.name,
+        githubBio: res.data.bio,
+        githubStars: res.data.stars,
+        color: response.color
       };
+      console.log(userData);
 
       let newData = generateHTML(userData)
 

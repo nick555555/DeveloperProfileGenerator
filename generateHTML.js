@@ -3,7 +3,7 @@ const colors = {
       wrapperBackground: "#E6E1C3",
       headerBackground: "#C1C72C",
       headerColor: "black",
-      photoBorderColor: "#black"
+      photoBorderColor: "black"
     },
     blue: {
       wrapperBackground: "#5F64D3",
@@ -23,10 +23,10 @@ const colors = {
       headerColor: "white",
       photoBorderColor: "white"
     }
-  };
+};
   
-  function generateHTML(data) {
-    return `<!DOCTYPE html>
+function generateHTML(data) {
+  return `<!DOCTYPE html>
   <html lang="en">
      <head>
         <meta charset="UTF-8" />
@@ -170,7 +170,45 @@ const colors = {
               zoom: .75; 
             } 
            }
-        </style>`
-          }
+        </style>
+        </head>
+      <body>
+         <div class="wrapper">
+          <div class="photo-header">
+            <img src="${userData.githubImg}" alt="profile image" />
+            <h1>Hi!</h1>
+            <h1>My name is ${userData.githubName}!</h1>
+            <h2>${userData.githubBio}</h2>
+            <p class="links-nav">
+              <a href="#" class="nav-link"><i class="fas fa-location-arrow"></i> ${userData.githubLocation}</a>
+              <a href="${userData.githubURL}" class="nav-link"><i class="fab fa-github"></i> GitHub</a>
+            </p>
+          </div>
+          <main class="container">
+            <div class="row">
+              <div class="col">
+              <div class="card">
+                <h2>Public Repos</h2>
+                ${userData.githubRepos}                  
+              </div>
+              <div class="card">
+                <h2>Followers</h2>
+                ${userData.githubFollowers}                  
+              </div>
+              <div class="card">
+                <h2>GitHub Stars</h2>
+                ${userData.githubStars}                  
+              </div>
+              <div class="card">
+                <h2>Following</h2>
+                ${userData.githubFollowing}                  
+              </div>
+              </div>
+            </div>
+          </main>
+         </div>
+      </body>         
+      </html>`
+}
 
 module.exports = generateHTML;
