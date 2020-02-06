@@ -1,32 +1,4 @@
-const colors = {
-    green: {
-      wrapperBackground: "#E6E1C3",
-      headerBackground: "#C1C72C",
-      headerColor: "black",
-      photoBorderColor: "black"
-    },
-    blue: {
-      wrapperBackground: "#5F64D3",
-      headerBackground: "#26175A",
-      headerColor: "white",
-      photoBorderColor: "#73448C"
-    },
-    pink: {
-      wrapperBackground: "#879CDF",
-      headerBackground: "#FF8374",
-      headerColor: "white",
-      photoBorderColor: "#FEE24C"
-    },
-    red: {
-      wrapperBackground: "#DE9967",
-      headerBackground: "#870603",
-      headerColor: "white",
-      photoBorderColor: "white"
-    }
-};
-  
-function generateHTML(data) {
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
      <head>
         <meta charset="UTF-8" />
@@ -52,7 +24,7 @@ function generateHTML(data) {
            height: 100%;
            }
            .wrapper {
-           background-color: ${colors[data.color].wrapperBackground};
+           background-color: #DE9967;
            padding-top: 100px;
            }
            body {
@@ -94,8 +66,8 @@ function generateHTML(data) {
            display: flex;
            justify-content: center;
            flex-wrap: wrap;
-           background-color: ${colors[data.color].headerBackground};
-           color: ${colors[data.color].headerColor};
+           background-color: #870603;
+           color: white;
            padding: 10px;
            width: 95%;
            border-radius: 6px;
@@ -106,7 +78,7 @@ function generateHTML(data) {
            border-radius: 50%;
            object-fit: cover;
            margin-top: -75px;
-           border: 6px solid ${colors[data.color].photoBorderColor};
+           border: 6px solid white;
            box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
            }
            .photo-header h1, .photo-header h2 {
@@ -149,8 +121,8 @@ function generateHTML(data) {
            .card {
              padding: 20px;
              border-radius: 6px;
-             background-color: ${colors[data.color].headerBackground};
-             color: ${colors[data.color].headerColor};
+             background-color: #870603;
+             color: white;
              margin: 20px;
            }
            
@@ -175,13 +147,13 @@ function generateHTML(data) {
       <body>
          <div class="wrapper">
           <div class="photo-header">
-            <img src="${data.githubImg}" alt="profile image" />
+            <img src="https://avatars0.githubusercontent.com/u/57273851?v=4" alt="profile image" />
             <h1>Hi!</h1>
-            <h1>My name is ${data.githubName}!</h1>
-            <h2>${data.githubBio}</h2>
+            <h1>My name is Nicholas Seto!</h1>
+            <h2>Hello! My name is Nick Seto and I am a beginner full stack web developer from Seattle.</h2>
             <p class="links-nav">
-              <a href="#" class="nav-link"><i class="fas fa-location-arrow"></i> ${data.githubLocation}</a>
-              <a href="${data.githubURL}" class="nav-link"><i class="fab fa-github"></i> GitHub</a>
+              <a href="#" class="nav-link"><i class="fas fa-location-arrow"></i> Seattle, Washington</a>
+              <a href="https://github.com/nick555555" class="nav-link"><i class="fab fa-github"></i> GitHub</a>
             </p>
           </div>
           <main class="container">
@@ -189,26 +161,23 @@ function generateHTML(data) {
               <div class="col">
               <div class="card">
                 <h2>Public Repos</h2>
-                ${data.githubRepos}                  
+                21                  
               </div>
               <div class="card">
                 <h2>Followers</h2>
-                ${data.githubFollowers}                  
+                14                  
               </div>
               <div class="card">
                 <h2>GitHub Stars</h2>
-                ${data.githubStars}                  
+                1000000                  
               </div>
               <div class="card">
                 <h2>Following</h2>
-                ${data.githubFollowing}                  
+                22                  
               </div>
               </div>
             </div>
           </main>
          </div>
       </body>         
-      </html>`
-}
-
-module.exports = generateHTML;
+      </html>

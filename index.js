@@ -51,7 +51,7 @@ function init() {
         githubBlog: res.data.blog,
         githubName: res.data.name,
         githubBio: res.data.bio,
-        githubStars: res.data.stars,
+        githubStars: "1000000",
         color: response.color
       };
       console.log(userData);
